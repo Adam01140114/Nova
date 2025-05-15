@@ -97,37 +97,114 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             const requestDetails = document.getElementById('request-details').value;
             
-            // Prepare email body
-            const emailBody = `
-Service: ${serviceName}
-Full Name: ${fullName}
-Email: ${email}
-Request Details: ${requestDetails}
-            `;
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
             
-            // Send email using mailto
-            const mailtoLink = `mailto:adamchaabane1234@gmail.com?subject=Service Inquiry: ${encodeURIComponent(serviceName)}&body=${encodeURIComponent(emailBody)}`;
-            window.location.href = mailtoLink;
+            // First, try to send via EmailJS
+            sendViaEmailJS();
             
-            // Display thank you message
-            inquiryPopup.innerHTML = `
-                <div class="popup-content thank-you">
-                    <h3>Thank You!</h3>
-                    <p>Thank you for your request, we will email you soon.</p>
-                    <button class="btn btn-primary close-thank-you">Close</button>
-                </div>
-            `;
+            function sendViaEmailJS() {
+                // Check if EmailJS is available
+                if (typeof emailjs !== 'undefined') {
+                    // Prepare email parameters
+                    const templateParams = {
+                        to_email: 'adamchaabane1234@gmail.com',
+                        from_name: fullName,
+                        from_email: email,
+                        service_name: serviceName,
+                        message: requestDetails,
+                        to_name: 'Nova Studio',
+                        reply_to: email
+                    };
+                    
+                    // Send email using EmailJS
+                    emailjs.send('service_n2pvmwh', 'template_wa6i8jg', templateParams)
+                        .then(function(response) {
+                            console.log('Email sent successfully!', response.status, response.text);
+                            showThankYouMessage();
+                        })
+                        .catch(function(error) {
+                            console.error('EmailJS sending failed:', error);
+                            // Try PHP fallback
+                            sendViaPHP();
+                        });
+                } else {
+                    // EmailJS not available, try PHP
+                    sendViaPHP();
+                }
+            }
             
-            // Add event listener to the close button
-            const closeThankYou = document.querySelector('.close-thank-you');
-            if (closeThankYou) {
-                closeThankYou.addEventListener('click', function() {
-                    inquiryPopup.style.display = 'none';
-                    // Reset the popup after it's hidden
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 300);
-                });
+            function sendViaPHP() {
+                // Create form data object to send to server
+                const formData = new FormData();
+                formData.append('service-name', serviceName);
+                formData.append('full-name', fullName);
+                formData.append('email', email);
+                formData.append('request-details', requestDetails);
+                
+                // Send using XMLHttpRequest
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'send-email.php', true);
+                
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                showThankYouMessage();
+                            } else {
+                                showError("Server error: " + response.message);
+                            }
+                        } catch(e) {
+                            showError("Invalid server response");
+                        }
+                    } else {
+                        showError("Request failed. Status: " + xhr.status);
+                    }
+                };
+                
+                xhr.onerror = function() {
+                    showError("Network error occurred");
+                };
+                
+                xhr.send(formData);
+            }
+            
+            function showThankYouMessage() {
+                // Display thank you message
+                inquiryPopup.innerHTML = `
+                    <div class="popup-content thank-you">
+                        <h3>Thank You!</h3>
+                        <p>Thank you for your request, we will email you soon.</p>
+                        <button class="btn btn-primary close-thank-you">Close</button>
+                    </div>
+                `;
+                
+                // Add event listener to the close button
+                const closeThankYou = document.querySelector('.close-thank-you');
+                if (closeThankYou) {
+                    closeThankYou.addEventListener('click', function() {
+                        inquiryPopup.style.display = 'none';
+                        // Reset the popup after it's hidden
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 300);
+                    });
+                }
+            }
+            
+            function showError(errorMessage) {
+                console.error(errorMessage);
+                
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                
+                // Show error message
+                alert('Sorry, there was an issue sending your request. Please try again later.');
             }
         });
     }
