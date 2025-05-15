@@ -23,6 +23,64 @@
             clear: both;
             width: 100%;
         }
+        
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 1.8rem; /* Smaller headline on mobile */
+                line-height: 1.3;
+            }
+            
+            .hero .container {
+                flex-direction: column-reverse; /* Stack elements in reverse order */
+            }
+            
+            .hero-content {
+                margin-top: 2rem; /* Add space between image and content */
+            }
+            
+            .hero-image {
+                width: 100%; /* Full width image on mobile */
+                margin-bottom: 1rem;
+            }
+            
+            /* Services section mobile optimization */
+            .services-container {
+                grid-gap: 10px; /* Reduce gap between service cards */
+            }
+            
+            .service-card {
+                padding: 15px; /* Reduce padding inside cards */
+                margin-bottom: 10px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.1rem; /* Smaller headings */
+                margin: 8px 0;
+            }
+            
+            .service-card p {
+                font-size: 0.85rem; /* Smaller paragraph text */
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+            
+            .service-icon {
+                font-size: 1.5rem; /* Smaller icons */
+                margin-bottom: 5px;
+            }
+            
+            .service-link {
+                font-size: 0.85rem; /* Smaller link text */
+                padding: 4px 0;
+            }
+            
+            /* Optional: Make services section two columns on mobile */
+            .services-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
