@@ -1,0 +1,40 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa" />
+  
+  <!-- Decorative Elements -->
+  <circle cx="480" cy="100" r="80" fill="#4361ee" opacity="0.1" />
+  <rect x="100" y="50" width="150" height="150" rx="20" fill="#ffd60a" opacity="0.1" />
+  <path d="M150 280L200 350L100 350L150 280Z" fill="#4361ee" opacity="0.1" />
+  
+  <!-- Envelope Base -->
+  <rect x="150" y="120" width="300" height="200" rx="10" fill="white" stroke="#16213e" stroke-width="3" />
+  
+  <!-- Envelope Flap (Open) -->
+  <path d="M150 120L300 220L450 120" stroke="#16213e" stroke-width="3" fill="#ffffff" />
+  
+  <!-- Envelope Content -->
+  <rect x="190" y="170" width="220" height="100" rx="5" fill="#f0f0f0" stroke="#e0e0e0" />
+  
+  <!-- Lines on Content -->
+  <line x1="210" y1="190" x2="390" y2="190" stroke="#cccccc" stroke-width="2" />
+  <line x1="210" y1="210" x2="390" y2="210" stroke="#cccccc" stroke-width="2" />
+  <line x1="210" y1="230" x2="350" y2="230" stroke="#cccccc" stroke-width="2" />
+  <line x1="210" y1="250" x2="300" y2="250" stroke="#cccccc" stroke-width="2" />
+  
+  <!-- Send Button -->
+  <rect x="330" y="240" width="60" height="25" rx="5" fill="#4361ee" />
+  <text x="360" y="257" font-family="Arial" font-size="12" fill="white" text-anchor="middle">SEND</text>
+  
+  <!-- Mail Icon -->
+  <circle cx="480" cy="280" r="40" fill="#ffd60a" opacity="0.8" />
+  <path d="M460 280L475 290L490 280" stroke="#16213e" stroke-width="2" />
+  <rect x="460" y="270" width="30" height="20" rx="2" stroke="#16213e" stroke-width="2" fill="none" />
+  
+  <!-- Chat Icon -->
+  <circle cx="110" cy="280" r="35" fill="#4361ee" opacity="0.8" />
+  <path d="M95 280C95 273.373 100.373 268 107 268H113C119.627 268 125 273.373 125 280V285C125 291.627 119.627 297 113 297H107L100 303V297C97.7909 297 96 295.209 96 293V280H95Z" stroke="#16213e" stroke-width="2" fill="none" />
+  
+  <!-- Contact Text -->
+  <text x="300" y="80" font-family="Arial" font-size="24" font-weight="bold" fill="#16213e" text-anchor="middle">GET IN TOUCH</text>
+</svg> 

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - YourBrand Studio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">YourBrand Studio</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Portfolio</h1>
+                <p>A showcase of our best work across various creative disciplines</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Filter -->
+        <section class="portfolio-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="3d">3D & Visual</button>
+                    <button class="filter-btn" data-filter="content">Content</button>
+                    <button class="filter-btn" data-filter="data">Data & Automation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Gallery -->
+        <section class="portfolio-gallery">
+            <div class="container">
+                <div class="portfolio-grid">
+                    <!-- Branding Projects -->
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/logo-1.jpg" alt="Logo Design for Tech Startup">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Modern Logo Design</h3>
+                                    <p>for Tech Startup</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Modern Logo Design</h4>
+                            <p>Branding</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/brand-guide.jpg" alt="Brand Guide for Fashion Brand">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Complete Brand Guide</h3>
+                                    <p>for Fashion Brand</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Complete Brand Guide</h4>
+                            <p>Branding</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/social-pack.jpg" alt="Social Media Pack">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Social Media Graphics Pack</h3>
+                                    <p>for Fitness Brand</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Social Media Graphics Pack</h4>
+                            <p>Branding</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/business-card.jpg" alt="Business Card Design">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Modern Business Cards</h3>
+                                    <p>for Law Firm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Modern Business Cards</h4>
+                            <p>Branding</p>
+                        </div>
+                    </div>
+
+                    <!-- Web Projects -->
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/website-1.jpg" alt="Website Design">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Business Website</h3>
+                                    <p>for Consulting Firm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Business Website</h4>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/ecommerce.jpg" alt="eCommerce Store">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>eCommerce Store</h3>
+                                    <p>for Clothing Brand</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>eCommerce Store</h4>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/chatbot.jpg" alt="Chatbot Integration">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Customer Service Chatbot</h3>
+                                    <p>for SaaS Platform</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Customer Service Chatbot</h4>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+
+                    <!-- 3D & Visual Projects -->
+                    <div class="portfolio-item" data-category="3d">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/3d-model.jpg" alt="3D Product Model">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Product 3D Model</h3>
+                                    <p>for Tech Gadget</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Product 3D Model</h4>
+                            <p>3D & Visual</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="3d">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/product-render.jpg" alt="Product Visualization">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Product Visualization</h3>
+                                    <p>for Furniture Company</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Product Visualization</h4>
+                            <p>3D & Visual</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="3d">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/interior-design.jpg" alt="Interior Design Visualization">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Interior Design Concept</h3>
+                                    <p>for Modern Office</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Interior Design Concept</h4>
+                            <p>3D & Visual</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="3d">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/game-asset.jpg" alt="Game Asset Design">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Game Asset Collection</h3>
+                                    <p>for Mobile Game</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Game Asset Collection</h4>
+                            <p>3D & Visual</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Projects -->
+                    <div class="portfolio-item" data-category="content">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/youtube-thumbnails.jpg" alt="YouTube Thumbnails">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>YouTube Thumbnail Series</h3>
+                                    <p>for Educational Channel</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>YouTube Thumbnail Series</h4>
+                            <p>Content Creation</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="content">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/instagram-edit.jpg" alt="Instagram Photo Editing">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Instagram Feed Redesign</h3>
+                                    <p>for Lifestyle Influencer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Instagram Feed Redesign</h4>
+                            <p>Content Creation</p>
+                        </div>
+                    </div>
+
+                    <!-- Data Projects -->
+                    <div class="portfolio-item" data-category="data">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/dashboard.jpg" alt="Data Dashboard">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sales Analytics Dashboard</h3>
+                                    <p>for E-commerce Business</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Sales Analytics Dashboard</h4>
+                            <p>Data & Automation</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="data">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/automation.jpg" alt="Workflow Automation">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Marketing Workflow Automation</h3>
+                                    <p>for Digital Agency</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h4>Marketing Workflow Automation</h4>
+                            <p>Data & Automation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Want Your Brand Featured Here?</h2>
+                <p>Let's collaborate on your next creative project and create something remarkable together.</p>
+                <a href="mailto:adamchaabane1234@gmail.com" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>YourBrand Studio</h3>
+                    <p>AI-powered design, development, and automation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Sitemap</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:adamchaabane1234@gmail.com">adamchaabane1234@gmail.com</a></p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 YourBrand Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
