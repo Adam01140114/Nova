@@ -115,9 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         from_name: fullName,
                         from_email: email,
                         service_name: serviceName,
-                        message: requestDetails,
-                        to_name: 'Nova Studio',
-                        reply_to: email
+                        message: requestDetails
                     };
                     
                     // Send email using EmailJS

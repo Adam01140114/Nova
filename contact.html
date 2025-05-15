@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Your EmailJS public key
+            emailjs.init("DAJNuzuAhJZTCn9-D");
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -54,7 +61,7 @@
                             </div>
                             <div class="method-details">
                                 <h3>Email</h3>
-                                <p><a href="mailto:adamchaabane1234@gmail.com">adamchaabane1234@gmail.com</a></p>
+                                <p><a href="#" class="contact-link">adamchaabane1234@gmail.com</a></p>
                                 <p class="method-note">Fastest response time, usually within 24 hours.</p>
                             </div>
                         </div>
@@ -70,7 +77,7 @@
         <section class="contact-form-section">
             <div class="container">
                 <h2>Send a Message</h2>
-                <form id="contact-form" class="contact-form" action="mailto:adamchaabane1234@gmail.com" method="post" enctype="text/plain">
+                <form id="contact-form" class="contact-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
@@ -103,6 +110,10 @@
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </div>
                 </form>
+                <div id="form-success" style="display: none; text-align: center; margin-top: 2rem;">
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent. We'll get back to you soon.</p>
+                </div>
             </div>
         </section>
 
@@ -165,7 +176,7 @@
             <div class="container">
                 <h2>Let's Create Something Amazing Together</h2>
                 <p>Ready to bring your ideas to life? Reach out today to get started.</p>
-                <a href="mailto:adamchaabane1234@gmail.com" class="btn btn-primary">Contact Now</a>
+                <a href="#" class="btn btn-primary contact-link">Contact Now</a>
             </div>
         </section>
     </main>
@@ -188,7 +199,7 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p>Email: <a href="mailto:adamchaabane1234@gmail.com">adamchaabane1234@gmail.com</a></p>
+                    <p>Email: <a href="#" class="contact-link">adamchaabane1234@gmail.com</a></p>
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -203,5 +214,73 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Show loading state on button
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Prepare email parameters
+            const templateParams = {
+                to_email: 'adamchaabane1234@gmail.com',
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                service_name: service,
+                message: message
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_n2pvmwh', 'template_wa6i8jg', templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    
+                    // Hide form and show success message
+                    document.getElementById('contact-form').style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                })
+                .catch(function(error) {
+                    console.error('Email sending failed:', error);
+                    
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                    
+                    // Show error message
+                    alert('Sorry, there was an issue sending your message. Please try again later.');
+                });
+        });
+        
+        // Handle contact link clicks to show contact form
+        document.querySelectorAll('.contact-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Scroll to contact form
+                const contactForm = document.querySelector('.contact-form-section');
+                window.scrollTo({
+                    top: contactForm.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Focus on the name field
+                setTimeout(() => {
+                    document.getElementById('name').focus();
+                }, 800);
+            });
+        });
+    </script>
 </body>
 </html> 
